@@ -1,0 +1,48 @@
+# Customer Segmentation — Python Dependencies
+# Python >= 3.10 recommended
+
+# Core Data Science
+numpy
+pandas
+scipy
+
+# Machine Learning
+scikit-learn
+joblib
+
+# Visualization
+matplotlib
+seaborn
+plotly
+altair==4.2.2
+
+# Streamlit App
+streamlit==1.32.0
+streamlit-option-menu
+
+# Data I/O
+openpyxl         
+xlrd
+pyarrow           
+
+# Configuration
+pyyaml
+python-dotenv
+
+# Utilities
+tqdm
+colorlog
+
+# Testing
+pytest
+pytest-cov
+
+# Code Quality
+black
+flake8
+isort
+
+# Notebook Support
+jupyter
+ipykernel
+nbformat
