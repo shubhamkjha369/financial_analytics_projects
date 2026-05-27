@@ -7,6 +7,6 @@ Finally we made clean notebooks for analysis--
 3. 03_SHAP_analysis.ipynb
 
 Main notebooks are hence - rest_with_gr, young_with_gr
--- rest_with_gr is for all individuals who are not young
--- young_with_ge is for all young indiciduals
+- rest_with_gr is for all individuals who are not young
+- young_with_ge is for all young indiciduals
 - here - gr: stands for genetic risk
