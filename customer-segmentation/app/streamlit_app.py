@@ -55,7 +55,6 @@ def load_clustered_data():
         return df
     return None
 
-
 predictor, cfg, MODEL_LOADED = load_predictor()
 cluster_data = load_clustered_data()
 
@@ -65,30 +64,47 @@ cluster_data = load_clustered_data()
 st.markdown("""
 <style>
   /* ── Fonts & base ─────────────────────────────────────────── */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-  html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap');
+  
+  html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    color: #0f172a;
+    font-weight: 700;
+  }
 
   /* ── KPI cards ───────────────────────────────────────────── */
   .kpi-card {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: 20px 24px;
+    padding: 22px 18px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .kpi-card:hover {
+    transform: translateY(-4px);
+    border-color: #6366f1;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.08), 0 8px 10px -6px rgba(99, 102, 241, 0.08);
   }
   .kpi-value {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #00d4ff;
+    color: #4f46e5;
     margin: 0;
   }
   .kpi-label {
-    font-size: 0.82rem;
-    color: #8892a4;
+    font-size: 0.8rem;
+    color: #64748b;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-top: 4px;
+    font-weight: 600;
+    margin-top: 6px;
   }
 
   /* ── Segment badge ───────────────────────────────────────── */
@@ -103,31 +119,42 @@ st.markdown("""
 
   /* ── Strategy list ────────────────────────────────────────── */
   .strategy-item {
-    background: rgba(255,255,255,0.04);
-    border-left: 3px solid #00d4ff;
-    padding: 10px 16px;
-    margin: 6px 0;
-    border-radius: 0 8px 8px 0;
-    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left-width: 4px;
+    padding: 12px 18px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: #334155;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    transition: all 0.2s ease;
+  }
+  .strategy-item:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
   }
 
   /* ── Header strip ─────────────────────────────────────────── */
   .header-strip {
-    background: linear-gradient(90deg, #0f3460, #533483, #0f3460);
-    padding: 18px 28px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #e0f2fe 100%);
+    padding: 24px 32px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #c7d2fe;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.04);
   }
   .header-strip h1 {
-    color: white;
+    color: #1e1b4b;
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
   }
   .header-strip p {
-    color: rgba(255,255,255,0.7);
-    margin: 4px 0 0 0;
-    font-size: 0.9rem;
+    color: #4338ca;
+    margin: 6px 0 0 0;
+    font-size: 0.95rem;
+    font-weight: 500;
   }
 </style>
 """, unsafe_allow_html=True)
@@ -189,10 +216,11 @@ def render_prediction(result: dict) -> None:
     emoji  = result["emoji"]
 
     st.markdown(f"""
-    <div style="background:linear-gradient(135deg,{color}22,{color}11);
-                border:2px solid {color}55; border-radius:16px; padding:24px;">
-      <h2 style="color:{color};margin:0">{emoji} {name}</h2>
-      <p style="color:#ccc;margin:8px 0 0 0">{result['description']}</p>
+    <div style="background: linear-gradient(135deg, {color}15, {color}08);
+                border: 2px solid {color}44; border-radius: 16px; padding: 24px;
+                box-shadow: 0 10px 25px -5px {color}1a;">
+      <h2 style="color:{color}; margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700;">{emoji} {name}</h2>
+      <p style="color: #334155; margin: 8px 0 0 0; font-size: 1rem; line-height: 1.5; font-weight: 500;">{result['description']}</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -207,7 +235,7 @@ def render_prediction(result: dict) -> None:
     st.markdown("#### 🎯 Marketing Strategies")
     for s in result["strategy"]:
         st.markdown(
-            f'<div class="strategy-item">• {s}</div>',
+            f'<div class="strategy-item" style="border-left: 4px solid {color};">• {s}</div>',
             unsafe_allow_html=True,
         )
 
@@ -252,7 +280,17 @@ if page == "Dashboard":
             hole=0.45,
         )
         fig.update_traces(textposition="inside", textinfo="percent+label")
-        fig.update_layout(showlegend=False, height=380)
+        fig.update_layout(
+            showlegend=False, 
+            height=380,
+            template="plotly_white",
+            font_family="Inter",
+            font_color="#475569",
+            title_font_family="Outfit",
+            title_font_color="#0f172a",
+            title_font_size=16,
+            margin=dict(t=50, b=10, l=10, r=10)
+        )
         st.plotly_chart(fig, use_container_width=True)
 
     with col_b:
@@ -270,7 +308,17 @@ if page == "Dashboard":
             color_continuous_scale="Viridis",
             labels={"Monetary": "Revenue (£)", "Cluster_Name": ""},
         )
-        fig.update_layout(height=380, coloraxis_showscale=False)
+        fig.update_layout(
+            height=380, 
+            coloraxis_showscale=False,
+            template="plotly_white",
+            font_family="Inter",
+            font_color="#475569",
+            title_font_family="Outfit",
+            title_font_color="#0f172a",
+            title_font_size=16,
+            margin=dict(t=50, b=10, l=10, r=10)
+        )
         st.plotly_chart(fig, use_container_width=True)
 
     # ── RFM scatter ──────────────────────────────────────────────────────
@@ -285,7 +333,13 @@ if page == "Dashboard":
         opacity=0.65,
         color_discrete_sequence=px.colors.qualitative.Bold,
     )
-    fig.update_layout(height=450)
+    fig.update_layout(
+        height=450,
+        template="plotly_white",
+        font_family="Inter",
+        font_color="#475569",
+        margin=dict(t=20, b=20, l=20, r=20)
+    )
     st.plotly_chart(fig, use_container_width=True)
 
     # ── Cluster feature summary table ────────────────────────────────────
@@ -393,6 +447,13 @@ elif page == "Predict Segment":
             title="Customer Input Values",
             height=300, showlegend=False,
             yaxis_title="Value",
+            template="plotly_white",
+            font_family="Inter",
+            font_color="#475569",
+            title_font_family="Outfit",
+            title_font_color="#0f172a",
+            title_font_size=16,
+            margin=dict(t=50, b=30, l=30, r=30)
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -445,6 +506,15 @@ elif page == "Batch Scoring":
                 color="Cluster_Name",
                 color_discrete_sequence=px.colors.qualitative.Bold,
             )
+            fig.update_layout(
+                template="plotly_white",
+                font_family="Inter",
+                font_color="#475569",
+                title_font_family="Outfit",
+                title_font_color="#0f172a",
+                title_font_size=16,
+                margin=dict(t=50, b=30, l=30, r=30)
+            )
             st.plotly_chart(fig, use_container_width=True)
 
             # Download results
@@ -478,11 +548,12 @@ elif page == "Segment Insights":
 
     with col1:
         st.markdown(f"""
-        <div style="background:linear-gradient(135deg,{profile['color']}33,{profile['color']}11);
-                    border:2px solid {profile['color']}66; border-radius:16px; padding:20px; text-align:center;">
-          <div style="font-size:3rem;">{profile['emoji']}</div>
-          <h3 style="color:{profile['color']};margin:8px 0">{selected}</h3>
-          <p style="color:#aaa;font-size:0.85rem">{profile['rfm_profile']}</p>
+        <div style="background: linear-gradient(135deg, {profile['color']}18, {profile['color']}08);
+                    border: 2px solid {profile['color']}44; border-radius: 16px; padding: 24px; text-align: center;
+                    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);">
+          <div style="font-size: 3.5rem; margin-bottom: 8px;">{profile['emoji']}</div>
+          <h3 style="color: {profile['color']}; margin: 8px 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.5rem;">{selected}</h3>
+          <span style="background: #ffffff; color: #475569; border: 1px solid #e2e8f0; padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; display: inline-block;">{profile['rfm_profile']}</span>
         </div>
         """, unsafe_allow_html=True)
 
@@ -497,7 +568,7 @@ elif page == "Segment Insights":
         st.markdown("#### 🎯 Marketing Playbook")
         for i, strategy in enumerate(profile["strategy"], 1):
             st.markdown(
-                f'<div class="strategy-item"><b>#{i}</b> {strategy}</div>',
+                f'<div class="strategy-item" style="border-left: 4px solid {profile["color"]};"><b>#{i}</b> {strategy}</div>',
                 unsafe_allow_html=True,
             )
 
@@ -649,7 +720,7 @@ elif page == "Methodology":
 
     st.divider()
     st.markdown("""
-    **GitHub**: `https://github.com/shubhamkjha369/customer-segmentation`  
+    **GitHub**: `https://github.com/shubhamkjha369/financial_analytics_projects/tree/main/customer-segmentation`  
     **Built with**: Python 3.10 · scikit-learn · Streamlit · Plotly  
     **Deployment**: Docker → Streamlit Community Cloud / Render
     """)

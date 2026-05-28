@@ -336,7 +336,7 @@ class CustomerSegmentPredictor:
     # Internal scorer
 
     def _score(self, raw: dict) -> dict:
-        """Core: build feature vector → scale → predict → enrich."""
+        """Core: build feature vector -> scale -> predict -> enrich."""
         # Align with training feature names
         row = []
         for feat in self._feature_names:

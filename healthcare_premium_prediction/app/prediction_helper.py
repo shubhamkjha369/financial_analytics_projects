@@ -1,12 +1,16 @@
 # codebasics ML course: codebasics.io, all rights reserverd
 
+import os
 import pandas as pd
 import joblib
 
-model_young = joblib.load("artifacts/model_young.joblib")
-model_rest = joblib.load("artifacts/model_rest.joblib")
-scaler_young = joblib.load("artifacts/scaler_young.joblib")
-scaler_rest = joblib.load("artifacts/scaler_rest.joblib")
+# Resolve paths dynamically relative to this script's directory
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_young = joblib.load(os.path.join(CURRENT_DIR, "..", "artifacts", "model_young.joblib"))
+model_rest = joblib.load(os.path.join(CURRENT_DIR, "..", "artifacts", "model_rest.joblib"))
+scaler_young = joblib.load(os.path.join(CURRENT_DIR, "..", "artifacts", "scaler_young.joblib"))
+scaler_rest = joblib.load(os.path.join(CURRENT_DIR, "..", "artifacts", "scaler_rest.joblib"))
 
 def calculate_normalized_risk(medical_history):
     risk_scores = {

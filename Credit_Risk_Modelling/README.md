@@ -17,27 +17,37 @@ The workflow includes:
 ## Project Structure
 
 ```
-project/
+Credit_Risk_Modelling/
 │
-├── artifacts/
+├── app/
+│   ├── artifacts/
+│   │   └── model_data.joblib      # Saved Logistic Regression model, scaler, and features
+│   ├── main.py                    # Streamlit web application interface
+│   └── prediction_helper.py       # Helper script for preprocessing inputs and calculating credit score
 │
 ├── dataset/
-│   ├── customers.csv
-│   ├── loans.csv
-│   └── bureau_data.csv
+│   ├── customers.csv              # Customer demographic and financial information
+│   ├── loans.csv                  # Loan-specific details
+│   └── bureau_data.csv            # Credit bureau history and related financial records
 │
 ├── notebooks/
-│   └── credit_risk_model.ipynb
-├── LICENSE
-└── README.md
+│   └── credit_risk_model.ipynb    # Jupyter Notebook with full EDA, model training, and evaluation
+│
+├── requirements.txt               # Project dependencies
+├── LICENSE                        # MIT License file
+└── README.md                      # Project documentation
 ```
 
 ### Files
 
-* **customers.csv** – Customer demographic and financial information
-* **loans.csv** – Loan-specific details
-* **bureau_data.csv** – Credit bureau history and related financial records
-* **credit_risk_model.ipynb** – Full machine learning workflow implemented in a Jupyter Notebook
+* **app/main.py** – Interactive Streamlit web interface for credit risk assessment.
+* **app/prediction_helper.py** – Python script for processing input values, scaling numerical features, and running predictions using the trained model.
+* **app/artifacts/model_data.joblib** – Saved model data containing the trained Logistic Regression model, MinMaxScaler, selected feature names, and list of columns scaled during preprocessing.
+* **dataset/customers.csv** – Customer demographic and financial information.
+* **dataset/loans.csv** – Loan-specific details.
+* **dataset/bureau_data.csv** – Credit bureau history and related financial records.
+* **notebooks/credit_risk_model.ipynb** – Full machine learning workflow (EDA, data preprocessing, handling class imbalance, and model training/evaluation) implemented in a Jupyter Notebook.
+* **requirements.txt** – Package dependencies needed to run both the Jupyter Notebook and the Streamlit app.
 
 ---
 
@@ -160,16 +170,9 @@ train_test_split
 
 ### 2. Model Training
 
-Supervised classification models are trained to predict default probability.
+Supervised classification models are trained to predict default probability. A **Logistic Regression** model is trained and deployed in this project due to its interpretability and robust performance on structured financial data.
 
-Typical models for this task include:
-
-* Logistic Regression
-* Random Forest
-* Gradient Boosting
-* XGBoost
-
-*(Model choice can be extended depending on experimentation.)*
+The model is saved as a serialized joblib artifact (`app/artifacts/model_data.joblib`) alongside the MinMaxScaler and feature parameters to ensure consistent preprocessing during inference.
 
 ### 3. Model Evaluation
 
@@ -203,29 +206,35 @@ These metrics help determine how well the model identifies risky borrowers.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/shubhammjha/Credit_Risk_Modelling.git
-cd Credit_Risk_Modelling
+git clone https://github.com/shubhamkjha369/financial_analytics_projects.git
+cd financial_analytics_projects/Credit_Risk_Modelling
 ```
 
 ### 2. Install Dependencies
 
+You can install all required dependencies (including Streamlit, Scikit-learn, XGBoost, and Jupyter) using:
+
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+pip install -r requirements.txt
 ```
 
-### 3. Run the Notebook
+### 3. Run the Streamlit Web Application
+
+To launch the interactive credit risk modeling dashboard:
+
+```bash
+streamlit run app/main.py
+```
+
+### 4. Run the Jupyter Notebook
+
+To explore the EDA and model training pipeline:
 
 ```bash
 jupyter notebook
 ```
 
-Open:
-
-```
-credit_risk_model.ipynb
-```
-
-Run all cells to reproduce the analysis and model training.
+Open and run all cells in `notebooks/credit_risk_model.ipynb` to reproduce the analysis.
 
 ---
 

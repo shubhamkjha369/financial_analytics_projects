@@ -162,13 +162,13 @@ class DataCleaner:
         )
         self._report["unique_customers"] = df["CustomerID"].nunique()
         self._report["date_range"] = (
-            f"{df['InvoiceDate'].min().date()} → "
+            f"{df['InvoiceDate'].min().date()} -> "
             f"{df['InvoiceDate'].max().date()}"
         )
 
         self.logger.info(
             f"Cleaning complete: "
-            f"{self._report['initial_rows']:,} → "
+            f"{self._report['initial_rows']:,} -> "
             f"{self._report['final_rows']:,} rows"
         )
         return df
@@ -317,7 +317,7 @@ def save_clean_data(df: pd.DataFrame, config: dict) -> Path:
     df.to_csv(csv_path, index=False)
     df.to_parquet(parquet_path, index=False)
 
-    _log.info(f"Clean data saved → {csv_path.name} + {parquet_path.name}")
+    _log.info(f"Clean data saved -> {csv_path.name} + {parquet_path.name}")
     return csv_path
 
 

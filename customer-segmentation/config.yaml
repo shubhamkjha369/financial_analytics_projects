@@ -119,7 +119,7 @@ model:
 # ----------------------------------------------------------
 cluster_labels:
   0: "Champions"
-  1: "At-Risk Customers"
+  1: "At Risk"
   2: "Potential Loyalists"
   3: "Hibernating"
 
@@ -135,7 +135,7 @@ cluster_colors:
 app:
   title: "Customer Segmentation Dashboard"
   port: 8501
-  theme: "dark"
+  theme: "light"
   cache_ttl: 3600
 
 # ----------------------------------------------------------

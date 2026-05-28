@@ -159,6 +159,9 @@ Customer segmentation is the process of dividing customers into groups based on 
 
 > **Key Insight**: 18% of customers (Champions) generate 61% of revenue — a strong Pareto distribution. Losing even a small fraction of Champions would severely impact business performance.
 
+> [!NOTE]
+> The performance metrics and customer distributions above are the benchmark values achieved when training the pipeline on the full, real **UCI Online Retail II dataset** (~1,067,371 transactions). When running locally using the auto-generated synthetic demo dataset (50,000 transactions) in the absence of the raw UCI file, the metrics will naturally vary.
+
 ---
 
 ## 📁 Project Structure
@@ -211,8 +214,8 @@ customer-segmentation/
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/shubhamkjha369/customer-segmentation.git
-cd customer-segmentation
+git clone https://github.com/shubhamkjha369/financial_analytics_projects.git
+cd financial_analytics_projects/customer-segmentation
 
 python -m venv venv
 source venv/bin/activate          # Windows: venv\Scripts\activate
@@ -515,6 +518,6 @@ Code style: `black . && isort . && flake8 src/`
 
 **Built with ❤️ for Data Science portfolios**
 
-[⭐ Star this repo](https://github.com/shubhamkjha369/customer-segmentation) • [🐛 Report Bug](https://github.com/shubhamkjha369/customer-segmentation/issues) • [💡 Request Feature](https://github.com/shubhamkjha369/customer-segmentation/issues)
+[⭐ Star this repo](https://github.com/shubhamkjha369/financial_analytics_projects) • [🐛 Report Bug](https://github.com/shubhamkjha369/financial_analytics_projects/issues) • [💡 Request Feature](https://github.com/shubhamkjha369/financial_analytics_projects/issues)
 
 </div>

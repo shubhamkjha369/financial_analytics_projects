@@ -130,7 +130,7 @@ def validate_raw_dataframe(df, logger=None) -> bool:
             logger.error(msg)
         raise ValueError(msg)
     if logger:
-        logger.info("Raw DataFrame validation passed ✓")
+        logger.info("Raw DataFrame validation passed [OK]")
     return True
 
 
@@ -146,7 +146,7 @@ def validate_rfm_dataframe(df, logger=None) -> bool:
             logger.error(msg)
         raise ValueError(msg)
     if logger:
-        logger.info("RFM DataFrame validation passed ✓")
+        logger.info("RFM DataFrame validation passed [OK]")
     return True
 
 

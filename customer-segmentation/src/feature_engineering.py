@@ -23,7 +23,7 @@ Advanced:
 Scoring:
   R_Score, F_Score, M_Score – Quartile-based scores (1–4)
   RFM_Score                 – Sum of individual scores
-  RFM_Segment               – Named segment label (Snake → Champion → Hibernating …)
+  RFM_Segment               – Named segment label (Snake -> Champion -> Hibernating …)
 """
 
 from __future__ import annotations
@@ -54,7 +54,7 @@ _log = get_logger(__name__)
 # =============================================================================
 
 class RFMFeatureBuilder:
-    # RFM Segment map (score → label) – classic 11-segment RFM
+    # RFM Segment map (score -> label) – classic 11-segment RFM
     _SEGMENT_MAP = {
         r"[3-4][3-4]": "Champions",
         r"[2-3][3-4]": "Loyal Customers",
@@ -121,9 +121,9 @@ class RFMFeatureBuilder:
 
         self.logger.info(
             f"RFM computed for {len(rfm):,} customers | "
-            f"Recency μ={rfm['Recency'].mean():.1f}d | "
-            f"Frequency μ={rfm['Frequency'].mean():.1f} | "
-            f"Monetary μ=£{rfm['Monetary'].mean():.2f}"
+            f"Recency mean={rfm['Recency'].mean():.1f}d | "
+            f"Frequency mean={rfm['Frequency'].mean():.1f} | "
+            f"Monetary mean=£{rfm['Monetary'].mean():.2f}"
         )
         return rfm.set_index("CustomerID")
 
@@ -225,8 +225,8 @@ class RFMFeatureBuilder:
         """
         Assign quartile-based R, F, M scores (1 = worst, 4 = best).
 
-        Recency: lower days = better → reversed quartile
-        Frequency & Monetary: higher = better → standard quartile
+        Recency: lower days = better -> reversed quartile
+        Frequency & Monetary: higher = better -> standard quartile
 
         Uses a robust fallback to rank-based percentile scoring when
         pd.qcut cannot form the requested number of unique bins (common
@@ -272,7 +272,7 @@ class RFMFeatureBuilder:
                     )
             return result
 
-        feat["R_Score"] = _safe_qcut(feat["Recency"],   ascending=False)  # low recency → high score
+        feat["R_Score"] = _safe_qcut(feat["Recency"],   ascending=False)  # low recency -> high score
         feat["F_Score"] = _safe_qcut(feat["Frequency"], ascending=True)
         feat["M_Score"] = _safe_qcut(feat["Monetary"],  ascending=True)
 

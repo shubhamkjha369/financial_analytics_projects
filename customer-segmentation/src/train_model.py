@@ -500,7 +500,7 @@ def run_training(
     # Save enriched features
     out_path = PROJECT_ROOT / "data" / "processed" / "rfm_features_clustered.csv"
     feat.to_csv(out_path)
-    _log.info(f"Clustered feature matrix saved → {out_path.name}")
+    _log.info(f"Clustered feature matrix saved -> {out_path.name}")
 
     # Save feature names list
     import pickle

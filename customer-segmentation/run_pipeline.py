@@ -29,10 +29,10 @@ cfg = load_config()
 log = get_logger("Pipeline", cfg)
 
 BANNER = """
-╔══════════════════════════════════════════════════════════╗
-║          CUSTOMER SEGMENTATION ML PIPELINE               ║
-║          UCI Online Retail II · scikit-learn             ║
-╚══════════════════════════════════════════════════════════╝
+--------------------------------------------------------------
+             CUSTOMER SEGMENTATION ML PIPELINE               
+             UCI Online Retail II & scikit-learn             
+--------------------------------------------------------------
 """
 
 
@@ -109,10 +109,10 @@ def main(step: str = "all") -> None:
         print(summary.to_string())
 
     total_time = time.time() - t0
-    log.info(f"\n✅ Pipeline complete in {total_time:.1f}s")
-    print(f"\n✅ All plots saved to docs/eda_plots/")
-    print(f"✅ Models saved to models/")
-    print(f"✅ Processed data saved to data/processed/")
+    log.info(f"\n[OK] Pipeline complete in {total_time:.1f}s")
+    print(f"\n[OK] All plots saved to docs/eda_plots/")
+    print(f"[OK] Models saved to models/")
+    print(f"[OK] Processed data saved to data/processed/")
     print(f"\nStart the Streamlit app:")
     print(f"  streamlit run app/streamlit_app.py")
 
