@@ -1,7 +1,7 @@
 # Healthcare Premium Prediction
 
 ## Production-Grade, Risk-Aware & Explainable Machine Learning System
-[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://healthcarepremiumprediction-blecsl3zyk8s4r83ykfbk9.streamlit.app/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://healthcare-premium-prediction-skjha369.streamlit.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)](https://github.com/shubhamkjha369/financial_analytics_projects/tree/main/healthcare_premium_prediction)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
