@@ -1,12 +1,8 @@
 # 🛍️ Customer Segmentation System
-### Streamlit-app - https://customer-segmentation-skjha369.streamlit.app/
-> **Production-grade ML system** for behavioural customer segmentation using RFM analysis, K-Means clustering, and real-time prediction — built on the UCI Online Retail II dataset.
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://python.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4-orange?logo=scikitlearn)](https://scikit-learn.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.33-red?logo=streamlit)](https://streamlit.io)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)](https://docker.com)
-[![Tests](https://img.shields.io/badge/Tests-pytest-green?logo=pytest)](https://pytest.org)
+> **Production-grade ML system** for behavioural customer segmentation using RFM analysis, K-Means clustering, and real-time prediction — built on the UCI Online Retail II dataset.
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://customer-segmentation-skjha369.streamlit.app/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)](https://github.com/shubhamkjha369/financial_analytics_projects/tree/main/customer-segmentation)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
 ---
