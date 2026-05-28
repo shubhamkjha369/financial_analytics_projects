@@ -1,6 +1,9 @@
 # Credit Risk Modelling
-# Streamlit app: https://mainpy-yf6kkeqh3akjx32xc9kely.streamlit.app/
-
+---
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://credit-risk-skjha369.streamlit.app/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)](https://github.com/shubhamkjha369/financial_analytics_projects/tree/main/Credit_Risk_Modelling)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+---
 ## Overview
 
 This project builds a **machine learning pipeline to predict loan default risk** using customer, loan, and credit bureau data. The goal is to identify borrowers who are likely to default so that financial institutions can make better lending decisions and manage risk more effectively.
