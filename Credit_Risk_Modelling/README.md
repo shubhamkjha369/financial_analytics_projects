@@ -1,5 +1,5 @@
 # Credit Risk Modelling
-# Streamlit app: https://creditriskmodelling-wlf3p7xb2m6kdjildhxvef.streamlit.app/
+# Streamlit app: https://mainpy-yf6kkeqh3akjx32xc9kely.streamlit.app/
 
 ## Overview
 

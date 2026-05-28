@@ -8,7 +8,7 @@ scipy
 
 # Machine Learning
 scikit-learn
-joblib
+joblib==1.5.1
 
 # Visualization
 matplotlib
