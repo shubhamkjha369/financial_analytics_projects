@@ -1,6 +1,7 @@
 # 🛍️ Customer Segmentation System
 
 > **Production-grade ML system** for behavioural customer segmentation using RFM analysis, K-Means clustering, and real-time prediction — built on the UCI Online Retail II dataset.
+---
 [![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://customer-segmentation-skjha369.streamlit.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)](https://github.com/shubhamkjha369/financial_analytics_projects/tree/main/customer-segmentation)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
